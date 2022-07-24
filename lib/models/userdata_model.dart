@@ -13,7 +13,7 @@ class UserDataModel {
     required this.image,
   });
 
-  factory UserDataModel.formJson(Map<String, dynamic> data) {
+  factory UserDataModel.fromJson(Map<String, dynamic> data) {
     return UserDataModel(
       id: data['id'],
       email: data['email'],

@@ -1,4 +1,3 @@
-import 'dart:developer';
 import 'package:dio/dio.dart';
 
 import '../models/userdata_model.dart';
@@ -11,19 +10,17 @@ class ApiForUser {
   Future<List<UserDataModel>?> userListApi() async {
     try {
       var response = await Dio().get(
-        'https://reqres.in/api/users?page=2',
+        "https://reqres.in/api/users?page=2",
       );
 
       if (response.statusCode == 200) {
-        List userList = response.data["data"];
+        List userList = await response.data["data"];
 
         List<UserDataModel> data = userList
             .map(
-              (e) => UserDataModel.formJson(e),
+              (e) => UserDataModel.fromJson(e),
             )
             .toList();
-
-        log("Data ==============> $userList");
 
         return data;
       }
