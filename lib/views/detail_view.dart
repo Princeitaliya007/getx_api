@@ -1,5 +1,9 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:getx_api/utils/statics/sizedbox.dart';
+
+import '../utils/statics/static_variables.dart';
 
 class DetailView extends StatefulWidget {
   const DetailView({Key? key}) : super(key: key);
@@ -31,6 +35,15 @@ class _DetailViewState extends State<DetailView> {
             Text(
               "Email: ${args.email}",
               style: Theme.of(context).textTheme.headline6,
+            ),
+            sizedBoxHeight20,
+            ElevatedButton(
+              onPressed: () {
+                // SignupData = user.read('signupdata');
+
+                // log(SignupData['data']['name']);
+              },
+              child: Text("Read Login Data"),
             ),
           ],
         ),

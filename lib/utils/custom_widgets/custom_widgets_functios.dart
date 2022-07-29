@@ -21,12 +21,12 @@ Widget containerWidget(
 
 Widget customButton(
     {required String name, required Color color, void Function()? onTap}) {
-  return InkWell(
+  return GestureDetector(
     onTap: onTap,
     child: Container(
       height: 50,
       width: 350,
-      margin: const EdgeInsets.only(left: 20),
+      // margin: const EdgeInsets.only(left: 20),
       alignment: Alignment.center,
       decoration: BoxDecoration(
         color: color,

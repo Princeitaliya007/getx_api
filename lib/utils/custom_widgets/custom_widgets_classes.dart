@@ -19,6 +19,8 @@ class CustomTextFormField extends StatelessWidget {
     this.icon,
     this.label,
     this.onChanged,
+    this.suffixicon,
+    required this.obscuretext,
   }) : super(key: key);
   final Key? fieldKey;
   final String? hintText;
@@ -36,6 +38,8 @@ class CustomTextFormField extends StatelessWidget {
   final ValueChanged<String?>? onChanged;
   final Color? borderColor;
   final Icon? icon;
+  final Widget? suffixicon;
+  final bool obscuretext;
 
   @override
   Widget build(BuildContext context) {
@@ -45,10 +49,12 @@ class CustomTextFormField extends StatelessWidget {
       controller: controller,
       style: style,
       decoration: InputDecoration(
+        suffixIcon: suffixicon,
         icon: icon,
         label: label,
         hintText: hintText,
       ),
+      obscureText: obscuretext,
     );
   }
 }
